@@ -438,7 +438,7 @@ PennController("Meta1",
                .settings.bold()
                ,
                newDropDown("abschluss", "Bitte eine Option ausw&auml;hlen")
-               .settings.add("kein Abschluss","Schulabschluss","Abitur oder gleichwertiger Abschluss","Studium ohne Abschluss","Bachelor","Master","Magister","Diplom", "Promotion", "Ausbildung", "Sonstige")     // MAYBE ADD QUESTIONS ABOUT DIALECT AND DOMINANT HAND
+               .settings.add("kein Abschluss","Schulabschluss","Abitur oder gleichwertiger Abschluss","Studium ohne Abschluss","Bachelor","Master", "Promotion","Magister","Diplom", "Ausbildung", "Sonstige")     // MAYBE ADD QUESTIONS ABOUT DIALECT AND DOMINANT HAND
                //.settings.size(191,20)
                .log()
                ,
@@ -446,6 +446,40 @@ PennController("Meta1",
                .settings.add(0, 0, getText("abschluss"))
                .settings.add(470,4, getDropDown("abschluss"))
                //.settings.center()
+               .print()
+               ,
+               //Studium
+               newText("schule","<b>Sind Sie in Deutschland zur Schule gegangen?</b><br><small>(Falls nein, wo?)</small><br><br>")
+               .settings.css("font-size", "18px")
+
+               ,
+               newTextInput("schuleinput")
+               .settings.size(150,40)
+               .log()
+               .settings.hidden()
+               ,
+               newText("schule_input", "")
+               .settings.after(getTextInput("schuleinput"))
+               ,
+               newDropDown("schule",  "<br>" +"Bitte eine Option ausw&auml;hlen")
+               .settings.add("Ja","Nein")
+               .log()
+               .settings.after(getText("schule_input"))
+               .settings.callback(
+                   getDropDown("schule")
+                   .test.selected("Nein")
+                   .success(getTextInput("schuleinput").settings.visible())
+
+                    )
+               ,
+               newCanvas("schule",1000, 40)
+               .settings.add(0, 0, getText("schule"))
+               .settings.add(470,3, getDropDown("schule"))
+               //.settings.center()
+               .print()
+               ,
+               newCanvas("filler", 1, 20)
+
                .print()
                ,
                //Studium
@@ -494,7 +528,7 @@ PennController("Meta1",
                .settings.add("A", "B", "C","D", "E", "F","G", "H", "I","J")
                .log()
                ,
-               newImage("leiter", "https://amor.cms.hu-berlin.de/~patarroa/Leiter.jpeg")
+               newImage("leiter", "Leiter.jpeg")
                .settings.size(200,300)
                ,
                newCanvas("leitercanvas", 1000,20)
@@ -531,7 +565,8 @@ PennController("Meta1",
 
             ).and( getDropDown("studium").test.selected()
                    .failure( newText('errorstudium', "<br>Bitte Studium angeben.").color("red") .center().print() )
-
+             ).and( getDropDown("schule").test.selected()
+                   .failure( newText('errorschule', "<br>Bitte Land der Beschulung angeben.").color("red") .center().print() )
             ).and(getDropDown("leiter").test.selected()
                    .failure( newText('leitererr', "<br>Bitte Variante auf der Leiter angeben.").color("red") .center().print() )
 
@@ -662,11 +697,12 @@ newText("Leerzeile"," <br></p>")
     getTextInput("Dialekt")
         .log("final")
 ,
+
 newText("Leerzeile"," <br></p>")
                  .center()
                 .print()
                  ,
-newText("Email","<b>Dürften wir dich in Zukunft erneut kontaktieren?</b><br>Wenn ja, bitte Emailadresse angeben.<br>Die Angabe der Kontaktdaten ist freiwillig. Um Anonymität zu gewährleisten, wird diese Angabe getrennt vom ausgefüllten Fragebogen archiviert.")
+newText("Email","<b>Dürften wir Sie in Zukunft erneut kontaktieren?</b><br>Wenn ja, bitte Emailadresse angeben.<br>Die Angabe der Kontaktdaten ist freiwillig. Um Anonymität zu gewährleisten, wird diese Angabe getrennt vom ausgefüllten Fragebogen archiviert.")
 //        .center()
         .print()
 ,
@@ -687,6 +723,7 @@ newText("Leerzeile"," <br></p>")
                  .center()
                 .print()
                  ,
+
     newButton("Ende", "Experiment beenden und Daten abschicken")
                .settings.css("font-family", "calibri").settings.css("font-size", "18px")
                //.settings.center()
@@ -701,19 +738,24 @@ newText("Leerzeile"," <br></p>")
                    newText("errormutter","<br>Bitte Sprachen der Mutter angeben")
                    .settings.color("red")
                    .center()
-                   .print())
+                   .print()
+                   )
                 ).and(
              getTextInput("SprachenVater").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
                    newText("errorvater","<br>Bitte Sprachen des Vaters angeben.")
                    .settings.color("red")
                    .center()
-                   .print())
-             ).and(
+                   .print()
+                   )
+                ).and(
              getTextInput("SprachenSelbst").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("errorselbst","<br>Bitte angeben wo Sie aufgewachsen sind.")
+                   newText("errorselbst","<br>Bitte angeben welche Sprachen Sie sprechen.")
                    .settings.color("red")
+                   .center()
+                   .print()
+                   )
             ).and(
              getTextInput("Dialekt").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
@@ -721,9 +763,9 @@ newText("Leerzeile"," <br></p>")
                    .settings.color("red")
                    .center()
                    .print())
-            )  )
+            ) 
 
- )
+            )
 )
 ;
 //Geloggte Ergebnisse senden
