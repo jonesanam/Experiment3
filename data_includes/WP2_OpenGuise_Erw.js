@@ -381,7 +381,7 @@ newText("erkannt?","<b>Hatten Sie das Gefühl, die Person, die Sie eben gehört 
                ,
                newCanvas("filler", 1, 20)
                .print()
-               )
+               
 ,
     newText("Meta-1", "<b>Personenbezogene Daten</b> <p>Wir brauchen einige persönliche Angaben von Ihnen. Diese werden anonymisiert gespeichert und eine spätere Zuordnung zu Ihnen wird nicht möglich sein. Bitte nehmen Sie sich beim Ausfüllen der Felder Zeit.<p>")
  //       .settings.css("text-align","justify")
