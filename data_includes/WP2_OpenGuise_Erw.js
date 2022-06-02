@@ -592,7 +592,7 @@ PennController("Meta2",
             .print()
         ,
 
-       newText("SprachenMutter","<b>Welche Sprachen spricht/sprach Ihre Mutter?</b><br>Bitte sortieren und mit der am besten gesprochenen Sprache beginnen.")
+       newText("SprachenMutter","<b>Welche Sprachen spricht/sprach Ihre Mutter im Alltag?</b><br>Bitte sortieren und mit der am besten gesprochenen Sprache beginnen.")
  //       .center()
         .print()
 ,
@@ -612,7 +612,7 @@ newText("Leerzeile"," <br></p>")
     .center()
     .print()
 ,
-    newText("SprachenVater","<b>Welche Sprachen spricht/sprach Ihr Vater?</b><br> Bitte sortieren und mit der am besten gesprochenen Sprache beginnen.")
+    newText("SprachenVater","<b>Welche Sprachen spricht/sprach Ihr Vater im Alltag?</b><br> Bitte sortieren und mit der am besten gesprochenen Sprache beginnen.")
   //      .center()
         .print()
 ,
