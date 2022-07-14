@@ -373,7 +373,7 @@ PennController("Meta1",
                ,
                //Alter
                newDropDown("age", "Bitte eine Option ausw&auml;hlen")
-               .settings.add("18" , "19" , "20", "21" , "22" , "23", "24" , "25" , "26", "27" , "28" , "29", "30" , "31", "32","33", "34" , "35", "36","37","38","39","über 40")
+               .settings.add("18" , "19" , "20", "21" , "22" , "23", "24" , "25" , "26", "27" , "28" , "29", "30" , "31", "32","33", "34" , "35", "36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","über 80")
                .log()
 
                ,
@@ -488,35 +488,6 @@ PennController("Meta1",
                ,
                newCanvas("filler", 1, 20)
 
-               .print()
-               ,
-
-              //Leiter
-               newText("Leiter","<b>Die untenstehende Leiter</b> repr&auml;sentiert den relativen Sozialstatus der Menschen in Deutschland. "
-                       +"An der Spitze der Leiter stehen Menschen mit relativ hohem Status – diejenigen, die das meiste Geld, die beste Bildung und die angesehensten Arbeitspl&auml;tze haben. Ganz unten sind Menschen mit relativ niedrigem Status – beispielsweise als arbeitslos Gemeldete. Relativ weit unten zu verorten w&auml;ren auch diejenigen, die nur wenig Geld verdienen, einen niedrigen Bildungstand haben, und / oder Berufe aus&uuml;ben, die die Gesellschaft als eher wenig respektabel ansieht."
-                       +"<br> Wo w&uuml;rden Sie Sich auf dieser Leiter einordnen? W&auml;hlen Sie bitte die Sprosse, die Ihrem empfundenen Sozialstatus am ehesten entspricht.")
-               .settings.css("font-size", "18px")
-               .settings.css("text-align","justify")
-               ,
-               newDropDown("leiter", "Bitte eine Option ausw&auml;hlen")
-               .settings.add("A", "B", "C","D", "E", "F","G", "H", "I","J")
-               .log()
-               ,
-               newImage("leiter", "https://amor.cms.hu-berlin.de/~idlsfbnd/Leiter.jpeg")
-               .settings.size(200,300)
-               ,
-               newCanvas("leitercanvas", 1000,20)
-               .settings.add(0, 10, getText("Leiter"))
-               //.settings.center()
-               .print()
-               ,
-               newCanvas("leitercanvas2", 1000,350)
-               .settings.add(250,200, getImage("leiter"))
-               .settings.add(400,300, getDropDown("leiter"))
-               //.settings.center()
-               .print()
-               ,
-              newCanvas("filler2", 40, 150)
                .print()
                ,
     newButton("continue", "Weiter")
