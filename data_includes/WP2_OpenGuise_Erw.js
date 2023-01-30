@@ -8,8 +8,6 @@ PennController.Sequence("Info",
                         "Probedurchlauf",
                         "Counter",
                         "Item",
-                        "Zwischenstopp",
-                        "ItemQ",
                         "Meta1","Meta2", "send","Final");
 PennController.DebugOff();
 var progressBarText = "Fortschritt";
@@ -179,7 +177,7 @@ PennController("Probedurchlauf",
         .once()
         .print()
     ,
-    newText("Probe2","<p><b>Probe für Durchgang 1:</b> Bitte Punkt auf der <b>Skala</b> anklicken. Bitte der Aufnahme eine Gesprächssituation zuordnen. Dazu Punkt auf der Skala auswählen. </p>")
+    newText("Probe2","<p><b>Probe:</b> Bitte Punkte auf den <b>Skalen</b> anklicken. Bitte die gehörte Person nach Gefühl bewerten. Dazu Punkte auf den Skalen auswählen. </p>")
         .settings.css("font-family", "calibri").settings.css("font-size", "18px")
         .settings.center()
         .print()
@@ -192,20 +190,28 @@ PennController("Probedurchlauf",
     newScale("Probeskala1", 9)
         .settings.css("font-family", "calibri").settings.css("font-size", "22px")
         .settings.labelsPosition("bottom").color("white")
-        .settings.before(newText("<b>Freund*in</b>"))
-        .settings.after(newText("<b>Lehrer*in</b>"))
+        .settings.before(newText("<b>gebildet</b>"))
+        .settings.after(newText("<b>ungebildet</b>"))
         .center()
         .print()
     ,
-    newText("Probe-8","<p><b>Probe für Durchgang 2: Bitte einen kurzen Text in das Textfeld schreiben.</b></p>")
+         newScale("Probeskala2", 9)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sympathisch</b>"))
+        .settings.after(newText("<b>unsympathisch</b>"))
+        .center()
+        .print()
+    ,          
+    newText("Probe-8","<p><b>Probe: Bitte die Einordnung kurz begründen.</b></p>")
         .center()
         .print()
     ,
-    newCanvas("Probetextfeld5", 1, 10)
+    newCanvas("Probetextfeld", 1, 10)
         .center()
         .print()
     ,
-    newTextInput("Probetexteingabe5")
+    newTextInput("Probetexteingabe")
         .center()
         .print()
     ,        
@@ -249,7 +255,7 @@ audio = ""
         .add( 150, 360, getAudio(audio))
     .print()
          ,
-        newText("Bewertung","<p><br>Bitte der Aufnahme eine Gesprächssituation zuordnen. Hat die Sprecherin mit einer <b>Freund*in</b> oder einer <b>Lehrer*in</b> gesprochen? Dazu Punkt auf der Skala auswählen. </p>")
+        newText("Bewertung","<p><br>Bitte die gehörte Person bewerten. Wie hört sich die gerade gehörte Person an? Dazu Punkte auf den Skalen auswählen. </p>")
           .settings.css("font-family", "calibri").settings.css("font-size", "18px")
            .center()
             .print()
@@ -262,8 +268,8 @@ audio = ""
     newScale("Skala1", 9)
         .settings.css("font-family", "calibri").settings.css("font-size", "22px")
         .settings.labelsPosition("bottom").color("white")
-        .settings.before(newText("<b>Freund*in</b>"))
-        .settings.after(newText("<b>Lehrer*in</b>"))
+        .settings.before(newText("<b>gebildet</b>"))
+        .settings.after(newText("<b>ungebildet</b>"))
         .center()
         ,
     newCanvas(600,50)
@@ -271,50 +277,47 @@ audio = ""
         .center()
         .print()
     ,
-        newButton( "Weiter" )
-            .center()
-            .print()
-            .wait(getScale("Skala1").test.selected()
-              .failure( newText('errorage', "<br>Bitte Punkt auf der Skala wählen.").color("red") .center().print() )
-            )
-    )
-    .log("audio", audio)    // Log which audio was played
-    )
-    
-//Zwischenstopp zwischen Durchgang 1 und Durchgang 2
-PennController("Zwischenstopp",
-    newText("Anleitung","Vielen Dank! Nun beginnt die zweite Phase des Experiments. In den nächsten Schritten werden die gleichen Aufnahmen erneut angehört und es soll die vorherige Einordnung der Nachrichten in eine Gesprächssituation begründet werden.<p>")
+     newScale("Skala2", 9)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sympathisch</b>"))
+        .settings.after(newText("<b>unsympathisch</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("Skala2").settings.log("final"))
+        .center()
+        .print()
+    , 
+    newScale("Skala3", 9)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>wirtschaftlich erfolgreich</b>"))
+        .settings.after(newText("<b>wirtschaftlich nicht erfolgreich</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("Skala3").settings.log("final"))
         .center()
         .print()
     ,
-    newButton("Weiter", "Bitte weiter klicken sobald bereit")
-    .center()
+      newScale("Skala4", 9)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>vertrauenswürdig</b>"))
+        .settings.after(newText("<b>nicht vertrauenswürdig</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("Skala4").settings.log("final"))
+        .center()
         .print()
-        .wait()
-    )
-// Now create the ItemQ trials reading the audio references from audios2
-audio = ""
-,Template( row =>
-    PennController( "ItemQ",
-        audio = audios2.shift() // Extract next entry from audios2
-        ,
-        newAudio( audio )
-            .center()
-            .once()
-        ,
-    newImage("message","MessageOpenGuise.png")
-            .size(708,522)
-        ,
-    newCanvas("Message", 708,522 )
-        .add(   0, 0, getImage("message"))
-        .add( 150, 360, getAudio(audio))
-        .print()
-         ,
+    ,                
     newHtml("ItemQText", "ItemQ.html")
         .center()
         .settings.css("font-size", "large")
         .print()
-        ,
+    ,
     newTextInput("Begründung")
         .center()
         .log()
@@ -325,16 +328,18 @@ audio = ""
     ,
     getTextInput("Begründung").settings.log("final")
     ,
-    newButton( "Weiter" )
-        .center()
-        .print()
-        .wait(getTextInput("Begründung").test.text(/^.+/)
+        newButton( "Weiter" )
+            .center()
+            .print()
+            .wait(getScale("Skala1","Skala2","Skala3","Skala4").test.selected()
+              .failure( newText('errorage', "<br>Bitte Punkte auf allen Skalen wählen.").color("red") .center().print() )
+            .wait(getTextInput("Begründung").test.text(/^.+/)
              .failure( newText('errorage', "<br>Bitte Begründung angeben.").color("red") .center().print() )
         )
-            
-            )
-    .log("audio", audio)
-)
+    )
+    .log("audio", audio)    // Log which audio was played
+    )
+
  //Metadaten
     //Personenbezogene Daten Seite 1 - Alter, Geschlecht, Bildung, Sozialerstatus
 PennController("Meta1",
