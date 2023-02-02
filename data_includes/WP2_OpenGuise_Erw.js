@@ -333,7 +333,7 @@ audio = ""
             .print()
             .wait(getScale("Skala1","Skala2","Skala3","Skala4").test.selected()
               .failure( newText('errorage', "<br>Bitte Punkte auf allen Skalen wählen.").color("red") .center().print() )
-            .wait(getTextInput("Begründung").test.text(/^.+/)
+              getTextInput("Begründung").test.text(/^.+/)
              .failure( newText('errorage', "<br>Bitte Begründung angeben.").color("red") .center().print() )
         )
     )
