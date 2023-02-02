@@ -338,7 +338,7 @@ audio = ""
         )
     )
     .log("audio", audio)    // Log which audio was played
-    )
+    ))
 
  //Metadaten
     //Personenbezogene Daten Seite 1 - Alter, Geschlecht, Bildung, Sozialerstatus
