@@ -313,22 +313,7 @@ audio = ""
         .center()
         .print()
     ,                
-    newHtml("ItemQText", "ItemQ.html")
-        .center()
-        .settings.css("font-size", "large")
-        .print()
-    ,
-    newTextInput("Begründung")
-        .center()
-        .log()
-    ,
-    newCanvas("Begründung",708,200)
-        .add(0,0,getTextInput("Begründung") .size(708,100) .lines(15))
-        .print()
-    ,
-    getTextInput("Begründung").settings.log("final")
-    ,
-   //mandatory textfeld
+      //mandatory textfeld
                newText("herkunft", "Woher kommt diese Person?")
                .settings.css("font-size", "18px")
                .settings.bold()
@@ -347,6 +332,22 @@ audio = ""
                   .center()
                 .print()
                  ,
+     newHtml("ItemQText", "ItemQ.html")
+        .center()
+        .settings.css("font-size", "large")
+        .print()
+    ,
+    newTextInput("Begründung")
+        .center()
+        .log()
+    ,
+    newCanvas("Begründung",708,200)
+        .add(0,0,getTextInput("Begründung") .size(708,100) .lines(15))
+        .print()
+    ,
+    getTextInput("Begründung").settings.log("final")
+    ,
+
         newButton( "Weiter" )
             .settings.css("font-family", "calibri").settings.css("font-size", "12px")
                //.settings.center()
