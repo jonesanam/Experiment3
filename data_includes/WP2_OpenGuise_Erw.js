@@ -328,12 +328,43 @@ audio = ""
     ,
     getTextInput("Begründung").settings.log("final")
     ,
-        newButton( "Weiter" )
-            .center()
-            .print()
-            .wait(getScale("Skala1","Skala2","Skala3","Skala4").test.selected()
-              .failure( newText('errorage', "<br>Bitte Punkte auf allen Skalen wählen.").color("red") .center().print() )
+   //mandatory textfeld
+               newText("herkunft", "Woher kommt diese Person?")
+               .settings.css("font-size", "18px")
+               .settings.bold()
+               ,
+               newTextInput("ort")
 
+               .log()
+               ,
+               newCanvas("ortcanvas", 1000, 40)
+               .settings.add(0, 0, getText("herkunft"))
+               .settings.add(450,3, getTextInput("herkunft"))
+               //.settings.center()
+               .print()
+               ,
+                newText("Leerzeile"," <br></p>")
+                  .center()
+                .print()
+                 ,
+        newButton( "Weiter" )
+            .settings.css("font-family", "calibri").settings.css("font-size", "12px")
+               //.settings.center()
+               .log()
+               .center()
+               .print()
+               .wait(newFunction('dummy', ()=>true).test.is(true)
+            // Skalen
+            .and(getScale("Skala1","Skala2","Skala3","Skala4").test.selected()
+              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+         //mandatoryTextfeld
+                ).and(
+             getTextInput("herkunft").test.text(/^.+/) // testing if at least one digit was written in the input box
+                .failure(
+                   newText("herkunfterror","<br>Bitte Einschätzung zur Herkunft der Person angeben.")
+                   .settings.color("red")
+                   .center()
+                   .print())
         )
     )
     .log("audio", audio)    // Log which audio was played
