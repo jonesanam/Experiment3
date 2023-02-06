@@ -266,25 +266,7 @@ audio = ""
         .print()
       ,
           //mandatory textfelder
-               newText("herkunft", "Woher kommt die gehörte Person?")
-               .settings.css("font-size", "18px")
-               .settings.bold()
-               ,
-               newTextInput("herkunft")
-
-               .log()
-               ,
-               newCanvas("herkunftcanvas", 1000, 40)
-               .settings.add(0, 0, getText("herkunft"))
-               .settings.add(450,3, getTextInput("herkunft"))
-               //.settings.center()
-               .print()
-               ,
-                newText("Leerzeile"," <br></p>")
-                  .center()
-                .print()
-                 ,
-               newText("alter", "Wie alt ist die gehörte Person?")
+                 newText("alter", "Wie alt ist die gehörte Person?")
                .settings.css("font-size", "18px")
                .settings.bold()
                ,
@@ -302,35 +284,53 @@ audio = ""
                   .center()
                 .print()
                  ,    
-              newText("dummy1", "Dummy1Frage3")
+               newText("wohnort", "Wo lebt diese Person?")
                .settings.css("font-size", "18px")
                .settings.bold()
                ,
-               newTextInput("dummy1")
+               newTextInput("wohnort")
 
                .log()
                ,
-               newCanvas("dummy1canvas", 1000, 40)
-               .settings.add(0, 0, getText("dummy1"))
-               .settings.add(450,3, getTextInput("dummy1"))
+               newCanvas("wohnortcanvas", 1000, 40)
+               .settings.add(0, 0, getText("wohnort"))
+               .settings.add(450,3, getTextInput("wohnort"))
                //.settings.center()
                .print()
                ,
                 newText("Leerzeile"," <br></p>")
                   .center()
                 .print()
-                 , 
-              newText("dummy2", "Dummy2Frage4")
+                 ,        
+                   newText("herkunft", "Woher kommt die gehörte Person?")
                .settings.css("font-size", "18px")
                .settings.bold()
                ,
-               newTextInput("dummy2")
+               newTextInput("herkunft")
 
                .log()
                ,
-               newCanvas("dummy2canvas", 1000, 40)
-               .settings.add(0, 0, getText("dummy2"))
-               .settings.add(450,3, getTextInput("dummy2"))
+               newCanvas("herkunftcanvas", 1000, 40)
+               .settings.add(0, 0, getText("herkunft"))
+               .settings.add(450,3, getTextInput("herkunft"))
+               //.settings.center()
+               .print()
+               ,
+                newText("Leerzeile"," <br></p>")
+                  .center()
+                .print()
+                 ,            
+              newText("situation", "Wo würde man wohl einer solchen Person begegnen?")
+               .settings.css("font-size", "18px")
+               .settings.bold()
+               ,
+               newTextInput("situation")
+
+               .log()
+               ,
+               newCanvas("situationcanvas", 1000, 40)
+               .settings.add(0, 0, getText("situation"))
+               .settings.add(450,3, getTextInput("situation"))
                //.settings.center()
                .print()
                ,
@@ -338,15 +338,15 @@ audio = ""
                   .center()
                 .print()
                  ,                    
-    newScale("bildung", 7)
+    newScale("selbstbewusstsein", 7)
         .settings.css("font-family", "calibri").settings.css("font-size", "22px")
         .settings.labelsPosition("bottom").color("white")
-        .settings.before(newText("<b>sehr gebildet</b>"))
-        .settings.after(newText("<b>überhaupt nicht gebildet</b>"))
+        .settings.before(newText("<b>sehr selbstbewusst</b>"))
+        .settings.after(newText("<b>überhaupt nicht selbstbewusst</b>"))
         .center()
         ,
     newCanvas(600,50)
-        .add(150, 0, getScale("bildung").settings.log("final"))
+        .add(150, 0, getScale("selbstbewusstsein").settings.log("final"))
         .center()
         .print()
     ,
@@ -434,7 +434,30 @@ audio = ""
         .center()
         .print()
     ,            
-
+    newScale("ehrgeiz", 7)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sehr ehrgeizig</b>"))
+        .settings.after(newText("<b>überhaupt nicht ehrgeizig</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("ehrgeiz").settings.log("final"))
+        .center()
+        .print()
+    ,    
+    newScale("freundlichkeit", 7)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sehr freundlich</b>"))
+        .settings.after(newText("<b>überhaupt nicht freundlich</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("freundlichkeit").settings.log("final"))
+        .center()
+        .print()
+    ,     
      newHtml("ItemQText", "ItemQ.html")
         .center()
         .settings.css("font-size", "large")
@@ -459,11 +482,11 @@ audio = ""
                .print()
                .wait(newFunction('dummy', ()=>true).test.is(true)
             // Skalen
-            .and(getScale("bildung","sympathie","erfolg","entspanntheit","intelligenz","vertrautheit","kompetenz","humor").test.selected()
+            .and(getScale("selbstbewusstsein","sympathie","erfolg","entspanntheit","intelligenz","vertrautheit","kompetenz","humor","ehrgeiz","freundlichkeit").test.selected()
               .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
          //mandatoryTextfeld
                 ).and(
-             getTextInput("herkunft","alter","dummy1","dummy2").test.text(/^.+/) // testing if at least one digit was written in the input box
+             getTextInput("herkunft","alter","wohnort","situation").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
                    newText("textfelderror","<br>Bitte jede Frage zur Person im jeweiligen Textfeld beantworten.")
                    .settings.color("red")
