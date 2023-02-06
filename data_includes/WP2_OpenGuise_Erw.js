@@ -255,7 +255,7 @@ audio = ""
         .add( 150, 360, getAudio(audio))
     .print()
          ,
-        newText("Bewertung","<p><br>Bitte die gehörte Person bewerten. Wie hört sich die gerade gehörte Person an? Dazu Punkte auf den Skalen auswählen. </p>")
+        newText("Bewertung","<p><br>Bitte die gehörte Person bewerten. Wie hört sich die gerade gehörte Person an? Dazu bitte die Fragen im jeweiligen Freitextfeld beantworten und Punkte auf den Skalen auswählen. </p>")
           .settings.css("font-family", "calibri").settings.css("font-size", "18px")
            .center()
             .print()
@@ -265,56 +265,8 @@ audio = ""
         .center()
         .print()
       ,
-    newScale("Skala1", 9)
-        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
-        .settings.labelsPosition("bottom").color("white")
-        .settings.before(newText("<b>gebildet</b>"))
-        .settings.after(newText("<b>ungebildet</b>"))
-        .center()
-        ,
-    newCanvas(600,50)
-        .add(150, 0, getScale("Skala1").settings.log("final"))
-        .center()
-        .print()
-    ,
-     newScale("Skala2", 9)
-        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
-        .settings.labelsPosition("bottom").color("white")
-        .settings.before(newText("<b>sympathisch</b>"))
-        .settings.after(newText("<b>unsympathisch</b>"))
-        .center()
-        ,
-    newCanvas(600,50)
-        .add(150, 0, getScale("Skala2").settings.log("final"))
-        .center()
-        .print()
-    , 
-    newScale("Skala3", 9)
-        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
-        .settings.labelsPosition("bottom").color("white")
-        .settings.before(newText("<b>wirtschaftlich erfolgreich</b>"))
-        .settings.after(newText("<b>wirtschaftlich nicht erfolgreich</b>"))
-        .center()
-        ,
-    newCanvas(600,50)
-        .add(150, 0, getScale("Skala3").settings.log("final"))
-        .center()
-        .print()
-    ,
-      newScale("Skala4", 9)
-        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
-        .settings.labelsPosition("bottom").color("white")
-        .settings.before(newText("<b>vertrauenswürdig</b>"))
-        .settings.after(newText("<b>nicht vertrauenswürdig</b>"))
-        .center()
-        ,
-    newCanvas(600,50)
-        .add(150, 0, getScale("Skala4").settings.log("final"))
-        .center()
-        .print()
-    ,                
-      //mandatory textfeld
-               newText("herkunft", "Woher kommt diese Person?")
+          //mandatory textfelder
+               newText("herkunft", "Woher kommt die gehörte Person?")
                .settings.css("font-size", "18px")
                .settings.bold()
                ,
@@ -322,7 +274,7 @@ audio = ""
 
                .log()
                ,
-               newCanvas("ortcanvas", 1000, 40)
+               newCanvas("herkunftcanvas", 1000, 40)
                .settings.add(0, 0, getText("herkunft"))
                .settings.add(450,3, getTextInput("herkunft"))
                //.settings.center()
@@ -332,6 +284,157 @@ audio = ""
                   .center()
                 .print()
                  ,
+               newText("alter", "Wie alt ist die gehörte Person?")
+               .settings.css("font-size", "18px")
+               .settings.bold()
+               ,
+               newTextInput("alter")
+
+               .log()
+               ,
+               newCanvas("altercanvas", 1000, 40)
+               .settings.add(0, 0, getText("alter"))
+               .settings.add(450,3, getTextInput("alter"))
+               //.settings.center()
+               .print()
+               ,
+                newText("Leerzeile"," <br></p>")
+                  .center()
+                .print()
+                 ,    
+              newText("dummy1", "Dummy1Frage3")
+               .settings.css("font-size", "18px")
+               .settings.bold()
+               ,
+               newTextInput("dummy1")
+
+               .log()
+               ,
+               newCanvas("dummy1canvas", 1000, 40)
+               .settings.add(0, 0, getText("dummy1"))
+               .settings.add(450,3, getTextInput("dummy1"))
+               //.settings.center()
+               .print()
+               ,
+                newText("Leerzeile"," <br></p>")
+                  .center()
+                .print()
+                 , 
+              newText("dummy2", "Dummy2Frage4")
+               .settings.css("font-size", "18px")
+               .settings.bold()
+               ,
+               newTextInput("dummy2")
+
+               .log()
+               ,
+               newCanvas("dummy2canvas", 1000, 40)
+               .settings.add(0, 0, getText("dummy2"))
+               .settings.add(450,3, getTextInput("dummy2"))
+               //.settings.center()
+               .print()
+               ,
+                newText("Leerzeile"," <br></p>")
+                  .center()
+                .print()
+                 ,                    
+    newScale("bildung", 7)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sehr gebildet</b>"))
+        .settings.after(newText("<b>überhaupt nicht gebildet</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("bildung").settings.log("final"))
+        .center()
+        .print()
+    ,
+     newScale("sympathie", 7)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sehr sympathisch</b>"))
+        .settings.after(newText("<b>überhaupt nicht sympathisch</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("sympathie").settings.log("final"))
+        .center()
+        .print()
+    , 
+    newScale("erfolg", 7)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>beruflich sehr erfolgreich</b>"))
+        .settings.after(newText("<b>beruflich überhaupt nicht erfolgreich</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("erfolg").settings.log("final"))
+        .center()
+        .print()
+    ,
+      newScale("entspanntheit", 7)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sehr entspannt</b>"))
+        .settings.after(newText("<b>überhaupt nicht entspannt</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("entspanntheit").settings.log("final"))
+        .center()
+        .print()
+    ,          
+    newScale("intelligenz", 7)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sehr intelligent</b>"))
+        .settings.after(newText("<b>überhaupt nicht intelligent</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("intelligenz").settings.log("final"))
+        .center()
+        .print()
+    ,      
+    newScale("vertrautheit", 7)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sehr vertraut</b>"))
+        .settings.after(newText("<b>überhaupt nicht vertraut</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("vertrautheit").settings.log("final"))
+        .center()
+        .print()
+    ,
+    newScale("kompetenz", 7)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sehr kompetent</b>"))
+        .settings.after(newText("<b>überhaupt nicht kompetent</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("kompetenz").settings.log("final"))
+        .center()
+        .print()
+    ,            
+     newScale("humor", 7)
+        .settings.css("font-family", "calibri").settings.css("font-size", "22px")
+        .settings.labelsPosition("bottom").color("white")
+        .settings.before(newText("<b>sehr humorvoll</b>"))
+        .settings.after(newText("<b>überhaupt nicht humorvoll</b>"))
+        .center()
+        ,
+    newCanvas(600,50)
+        .add(150, 0, getScale("humor").settings.log("final"))
+        .center()
+        .print()
+    ,            
+
      newHtml("ItemQText", "ItemQ.html")
         .center()
         .settings.css("font-size", "large")
@@ -356,13 +459,13 @@ audio = ""
                .print()
                .wait(newFunction('dummy', ()=>true).test.is(true)
             // Skalen
-            .and(getScale("Skala1","Skala2","Skala3","Skala4").test.selected()
+            .and(getScale("bildung","sympathie","erfolg","entspanntheit","intelligenz","vertrautheit","kompetenz","humor").test.selected()
               .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
          //mandatoryTextfeld
                 ).and(
-             getTextInput("herkunft").test.text(/^.+/) // testing if at least one digit was written in the input box
+             getTextInput("herkunft","alter","dummy1","dummy2").test.text(/^.+/) // testing if at least one digit was written in the input box
                 .failure(
-                   newText("herkunfterror","<br>Bitte Einschätzung zur Herkunft der Person angeben.")
+                   newText("textfelderror","<br>Bitte jede Frage zur Person im jeweiligen Textfeld beantworten.")
                    .settings.color("red")
                    .center()
                    .print())
