@@ -338,14 +338,14 @@ audio = ""
                   .center()
                 .print()
                  ,                    
-    newScale("selbstbewusstsein", 7)
+   newScale("selbstbewusstsein", 7)
         .settings.css("font-family", "calibri").settings.css("font-size", "22px")
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>sehr selbstbewusst</b>"))
         .settings.after(newText("<b>überhaupt nicht selbstbewusst</b>"))
         .center()
         ,
-    newCanvas(600,50)
+    newCanvas("selbstbewusstsein",600,50)
         .add(150, 0, getScale("selbstbewusstsein").settings.log("final"))
         .center()
         .print()
@@ -357,7 +357,7 @@ audio = ""
         .settings.after(newText("<b>überhaupt nicht sympathisch</b>"))
         .center()
         ,
-    newCanvas(600,50)
+    newCanvas("sympathie",600,50)
         .add(150, 0, getScale("sympathie").settings.log("final"))
         .center()
         .print()
@@ -369,7 +369,7 @@ audio = ""
         .settings.after(newText("<b>beruflich überhaupt nicht erfolgreich</b>"))
         .center()
         ,
-    newCanvas(600,50)
+    newCanvas("erfolg",600,50)
         .add(150, 0, getScale("erfolg").settings.log("final"))
         .center()
         .print()
@@ -381,7 +381,7 @@ audio = ""
         .settings.after(newText("<b>überhaupt nicht entspannt</b>"))
         .center()
         ,
-    newCanvas(600,50)
+    newCanvas("entspanntheit",600,50)
         .add(150, 0, getScale("entspanntheit").settings.log("final"))
         .center()
         .print()
@@ -393,7 +393,7 @@ audio = ""
         .settings.after(newText("<b>überhaupt nicht intelligent</b>"))
         .center()
         ,
-    newCanvas(600,50)
+    newCanvas("intelligenz",600,50)
         .add(150, 0, getScale("intelligenz").settings.log("final"))
         .center()
         .print()
@@ -405,7 +405,7 @@ audio = ""
         .settings.after(newText("<b>überhaupt nicht vertraut</b>"))
         .center()
         ,
-    newCanvas(600,50)
+    newCanvas("vertrautheit",600,50)
         .add(150, 0, getScale("vertrautheit").settings.log("final"))
         .center()
         .print()
@@ -417,7 +417,7 @@ audio = ""
         .settings.after(newText("<b>überhaupt nicht kompetent</b>"))
         .center()
         ,
-    newCanvas(600,50)
+    newCanvas("kompetenz",600,50)
         .add(150, 0, getScale("kompetenz").settings.log("final"))
         .center()
         .print()
@@ -429,7 +429,7 @@ audio = ""
         .settings.after(newText("<b>überhaupt nicht humorvoll</b>"))
         .center()
         ,
-    newCanvas(600,50)
+    newCanvas("humor",600,50)
         .add(150, 0, getScale("humor").settings.log("final"))
         .center()
         .print()
@@ -441,7 +441,7 @@ audio = ""
         .settings.after(newText("<b>überhaupt nicht ehrgeizig</b>"))
         .center()
         ,
-    newCanvas(600,50)
+    newCanvas("ehrgeiz",600,50)
         .add(150, 0, getScale("ehrgeiz").settings.log("final"))
         .center()
         .print()
@@ -453,10 +453,16 @@ audio = ""
         .settings.after(newText("<b>überhaupt nicht freundlich</b>"))
         .center()
         ,
-    newCanvas(600,50)
+    newCanvas("freundlichkeit",600,50)
         .add(150, 0, getScale("freundlichkeit").settings.log("final"))
         .center()
         .print()
+        ,
+    newSelector("dummy")
+        .add(getCanvas("freundlichkeit"),getCanvas("ehrgeiz"),getCanvas("humor"),getCanvas("kompetenz"),getCanvas("vertrautheit"),getCanvas("intelligenz"),getCanvas("entspanntheit"),getCanvas("erfolg"),getCanvas("sympathie"),getCanvas("selbstbewusstsein"))
+        .shuffle()
+        .disable()
+        .wait()
     ,     
      newHtml("ItemQText", "ItemQ.html")
         .center()
