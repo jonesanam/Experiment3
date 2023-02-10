@@ -462,7 +462,6 @@ audio = ""
         .add(getCanvas("freundlichkeit"),getCanvas("ehrgeiz"),getCanvas("humor"),getCanvas("kompetenz"),getCanvas("vertrautheit"),getCanvas("intelligenz"),getCanvas("entspanntheit"),getCanvas("erfolg"),getCanvas("sympathie"),getCanvas("selbstbewusstsein"))
         .shuffle()
         .disable()
-        .wait()
     ,     
      newHtml("ItemQText", "ItemQ.html")
         .center()
