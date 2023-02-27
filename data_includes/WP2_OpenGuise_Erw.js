@@ -320,7 +320,7 @@ audio = ""
                   .center()
                 .print()
                  ,            
-              newText("situation", "Wo würde man wohl einer solchen Person begegnen?")
+              newText("situation", "Wo würde man einer solchen Person begegnen?")
                .settings.css("font-size", "18px")
                .settings.bold()
                ,
@@ -338,15 +338,12 @@ audio = ""
                   .center()
                 .print()
                  ,                    
-   newScale("selbstbewusstsein", 7)
+      newScale("selbstbewusstsein", 7)
         .settings.css("font-family", "calibri").settings.css("font-size", "22px")
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>sehr selbstbewusst</b>"))
         .settings.after(newText("<b>überhaupt nicht selbstbewusst</b>"))
-        .center()
-        ,
-    newCanvas("selbstbewusstsein",600,50)
-        .add(150, 0, getScale("selbstbewusstsein").settings.log("final"))
+        .settings.log("final")
         .center()
         .print()
     ,
@@ -355,10 +352,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>sehr sympathisch</b>"))
         .settings.after(newText("<b>überhaupt nicht sympathisch</b>"))
-        .center()
-        ,
-    newCanvas("sympathie",600,50)
-        .add(150, 0, getScale("sympathie").settings.log("final"))
+        .settings.log("final")
         .center()
         .print()
     , 
@@ -367,10 +361,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>beruflich sehr erfolgreich</b>"))
         .settings.after(newText("<b>beruflich überhaupt nicht erfolgreich</b>"))
-        .center()
-        ,
-    newCanvas("erfolg",600,50)
-        .add(150, 0, getScale("erfolg").settings.log("final"))
+        .settings.log("final")
         .center()
         .print()
     ,
@@ -379,10 +370,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>sehr entspannt</b>"))
         .settings.after(newText("<b>überhaupt nicht entspannt</b>"))
-        .center()
-        ,
-    newCanvas("entspanntheit",600,50)
-        .add(150, 0, getScale("entspanntheit").settings.log("final"))
+        .settings.log("final")
         .center()
         .print()
     ,          
@@ -391,10 +379,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>sehr intelligent</b>"))
         .settings.after(newText("<b>überhaupt nicht intelligent</b>"))
-        .center()
-        ,
-    newCanvas("intelligenz",600,50)
-        .add(150, 0, getScale("intelligenz").settings.log("final"))
+        .settings.log("final")
         .center()
         .print()
     ,      
@@ -403,10 +388,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>sehr vertraut</b>"))
         .settings.after(newText("<b>überhaupt nicht vertraut</b>"))
-        .center()
-        ,
-    newCanvas("vertrautheit",600,50)
-        .add(150, 0, getScale("vertrautheit").settings.log("final"))
+        .settings.log("final")
         .center()
         .print()
     ,
@@ -415,10 +397,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>sehr kompetent</b>"))
         .settings.after(newText("<b>überhaupt nicht kompetent</b>"))
-        .center()
-        ,
-    newCanvas("kompetenz",600,50)
-        .add(150, 0, getScale("kompetenz").settings.log("final"))
+        .settings.log("final")
         .center()
         .print()
     ,            
@@ -427,10 +406,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>sehr humorvoll</b>"))
         .settings.after(newText("<b>überhaupt nicht humorvoll</b>"))
-        .center()
-        ,
-    newCanvas("humor",600,50)
-        .add(150, 0, getScale("humor").settings.log("final"))
+        .settings.log("final")
         .center()
         .print()
     ,            
@@ -439,27 +415,21 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>sehr ehrgeizig</b>"))
         .settings.after(newText("<b>überhaupt nicht ehrgeizig</b>"))
+        .settings.log("final")
         .center()
-        ,
-    newCanvas("ehrgeiz",600,50)
-        .add(150, 0, getScale("ehrgeiz").settings.log("final"))
-        .center()
-        .print()
-    ,    
+        .print() 
+        ,    
     newScale("freundlichkeit", 7)
         .settings.css("font-family", "calibri").settings.css("font-size", "22px")
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>sehr freundlich</b>"))
         .settings.after(newText("<b>überhaupt nicht freundlich</b>"))
-        .center()
-        ,
-    newCanvas("freundlichkeit",600,50)
-        .add(150, 0, getScale("freundlichkeit").settings.log("final"))
+        .settings.log("final")
         .center()
         .print()
         ,
     newSelector("dummy")
-        .add(getCanvas("freundlichkeit"),getCanvas("ehrgeiz"),getCanvas("humor"),getCanvas("kompetenz"),getCanvas("vertrautheit"),getCanvas("intelligenz"),getCanvas("entspanntheit"),getCanvas("erfolg"),getCanvas("sympathie"),getCanvas("selbstbewusstsein"))
+        .add(getScale("freundlichkeit"),getScale("ehrgeiz"),getScale("humor"),getScale("kompetenz"),getScale("vertrautheit"),getScale("intelligenz"),getScale("entspanntheit"),getScale("erfolg"),getScale("sympathie"),getScale("selbstbewusstsein"))
         .shuffle()
         .disable()
     ,     
