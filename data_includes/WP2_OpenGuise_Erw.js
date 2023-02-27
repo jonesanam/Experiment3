@@ -251,7 +251,7 @@ audio = ""
             .size(400,200)
         ,
     newCanvas("Message", 708,522 )
-        .add(   110, 200, getImage("message"))
+        .add(   120, 230, getImage("message"))
         .add( 150, 360, getAudio(audio))
     .print()
          ,
