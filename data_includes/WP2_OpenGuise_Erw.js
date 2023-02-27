@@ -248,7 +248,7 @@ audio = ""
             .once()
         ,
     newImage("message","messageExp3.png")
-            .size(708,522)
+            .size(354,261)
         ,
     newCanvas("Message", 708,522 )
         .add(   0, 0, getImage("message"))
