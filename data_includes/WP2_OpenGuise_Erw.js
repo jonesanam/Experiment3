@@ -252,7 +252,7 @@ audio = ""
         ,
     newCanvas("Message", 430,200 )
         .add(   130, 0, getImage("message"))
-        .add( 150, 140, getAudio(audio))
+        .add( 150, 135, getAudio(audio))
     .print()
          ,
         newText("Bewertung","<p><br>Bitte die gehörte Person bewerten. Wie hört sich die gerade gehörte Person an? Dazu bitte die Fragen im jeweiligen Freitextfeld beantworten und Punkte auf den Skalen auswählen. </p>")
