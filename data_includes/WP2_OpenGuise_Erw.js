@@ -247,7 +247,7 @@ audio = ""
             .center()
             .once()
         ,
-    newImage("message","MessageOpenGuise.png")
+    newImage("message","messageExp3.png")
             .size(708,522)
         ,
     newCanvas("Message", 708,522 )
