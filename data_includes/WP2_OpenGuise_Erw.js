@@ -135,29 +135,7 @@ PennController("Anleitung",
         .center()
         .print()
     ,
-    newButton("buttonErklärung", "Weiter zum Erklärbild")
-        .settings.css("font-family", "calibri").settings.css("font-size", "12px")
-        .settings.center()
-        .print()
-        .wait()
-    , 
-//Entfernt das vorherige Html-Dokument und den Button
-    getHtml("Anleitung")
-         .remove()
-    ,
-    getButton("buttonErklärung") 
-         .remove()
-    ,
-    newText("Anleitung2", "So sieht das Experiment nachher aus. Als nächstes folgt eine Probe des Experiments.")
-        .settings.css("font-family", "calibri").settings.css("font-size", "16px")
-        .settings.center()
-        .print()
-    ,
-    newImage("openguiseanleitung", "OpenGuiseAnleitung.png")
-        .settings.center()
-        .print()
-    ,
-    newButton("buttonProbe", "Weiter")
+    newButton("buttonErklärung", "Weiter zum Probedurchlauf")
         .settings.css("font-family", "calibri").settings.css("font-size", "12px")
         .settings.center()
         .print()
