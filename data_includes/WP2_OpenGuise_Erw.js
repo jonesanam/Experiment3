@@ -233,6 +233,10 @@ audio = ""
         .add( 150, 135, getAudio(audio))
     .print()
          ,
+         getAudio( audio ).wait("first").remove()
+         ,
+         getImage("message").remove()
+         ,
         newText("Bewertung","<p><br>Bitte die gehörte Person bewerten. Wie hört sich die gerade gehörte Person an? Dazu bitte die Fragen im jeweiligen Freitextfeld beantworten und Punkte auf den Skalen auswählen. </p>")
           .settings.css("font-family", "calibri").settings.css("font-size", "18px")
            .center()
