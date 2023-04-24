@@ -485,7 +485,7 @@ PennController("Meta1",
                //.settings.center()
                .print()
                ,
-                              newTextInput("beforeinput")
+               newTextInput("beforeinput")
                .settings.size(150,40)
                .log()
                .settings.hidden()
@@ -503,15 +503,15 @@ PennController("Meta1",
                    getDropDown("before")
                    .test.selected("Ja")
                    .success(getTextInput("beforeinput").settings.visible()
-                )
+               )
                ,
                newCanvas("before", 1000, 40)
                .settings.add(0, 0, getText("before"))
                .settings.add(500,3, getDropDown("before"))
                //.settings.center()
                .print()
-               .wait()
                
+      
                ,
                //Alter
                newDropDown("age", "Bitte eine Option ausw&auml;hlen")
