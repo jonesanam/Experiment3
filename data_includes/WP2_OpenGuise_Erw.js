@@ -493,7 +493,7 @@ PennController("Meta1",
                newText("before_input", "")
                .settings.after(getTextInput("beforeinput"))
                ,
-               newText("before", "Haben Sie vorher schon an einem Experiment dieser Art teilgenommen? (Zeitungstext korrigieren, Audioaufnahmen hören")
+               newText("before", "Haben Sie vorher schon an einem Experiment dieser Art teilgenommen? (Zeitungstext korrigieren, Audioaufnahmen hören)")
                ,
                newDropDown("before",  "<br>" +"Bitte eine Option ausw&auml;hlen")
                .settings.add("Ja", "Nein")
@@ -503,7 +503,7 @@ PennController("Meta1",
                    getDropDown("before")
                    .test.selected("Ja")
                    .success(getTextInput("beforeinput").settings.visible()
-               )
+               ))
                ,
                newCanvas("before", 1000, 40)
                .settings.add(0, 0, getText("before"))
