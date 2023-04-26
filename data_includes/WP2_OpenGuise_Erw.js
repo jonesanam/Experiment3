@@ -427,13 +427,13 @@ audio = ""
     newCanvas("Begründung",708,200)
         .add(0,0,getTextInput("Begründung") .size(708,100) .lines(15))
         .print()
+,              
+    getTextInput("Begründung").settings.log("final")
     ,
     newFunction( ()=>{
     window.scrollTo(0,0);
     document.querySelector(".PennController-TextInput.PennController-alter").focus();
-}).call()
-,              
-    getTextInput("Begründung").settings.log("final")
+}).call()                
 ,
         newButton( "Weiter" )
             .settings.css("font-family", "calibri").settings.css("font-size", "12px")
