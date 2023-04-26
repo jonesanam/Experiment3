@@ -497,7 +497,7 @@ PennController("Meta1",
                newText("before_input", "")
                .settings.after(getTextInput("beforeinput"))
                ,
-               newText("before", "Haben Sie vorher schon an einem Experiment dieser Art teilgenommen? <br> (Zeitungstext korrigieren, Audioaufnahmen hören)")
+               newText("before", "Haben Sie vorher schon an einem Experiment dieser Art teilgenommen? <br> (Zeitungstext korrigieren, Audioaufnahmen hören bzw. bewerten)")
                ,
 
                newDropDown("before",  "<br>" +"Bitte eine Option ausw&auml;hlen")
