@@ -811,7 +811,7 @@ newText("Leerzeile"," <br></p>")
                  ,
     newFunction( ()=>{
     window.scrollTo(0,0);
-    document.querySelector(".PennController-TextInput.PennController-alter").focus();
+    document.querySelector(".PennController-TextInput.PennController-SprachenMutter").focus();
 }).call()
 ,
     newButton("Ende", "Experiment beenden und Daten abschicken")
