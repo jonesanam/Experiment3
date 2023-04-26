@@ -811,6 +811,11 @@ newText("Leerzeile"," <br></p>")
                  .center()
                 .print()
                  ,
+    newFunction( ()=>{
+    window.scrollTo(0,0);
+    document.querySelector(".PennController-TextInput.PennController-alter").focus();
+}).call()
+,
     newButton("Ende", "Experiment beenden und Daten abschicken")
                .settings.css("font-family", "calibri").settings.css("font-size", "18px")
                //.settings.center()
