@@ -428,6 +428,11 @@ audio = ""
         .add(0,0,getTextInput("Begründung") .size(708,100) .lines(15))
         .print()
     ,
+    newFunction( ()=>{
+    window.scrollTo(0,0);
+    document.querySelector(".PennController-TextInput.PennController-alter").focus();
+}).call()
+,              
     getTextInput("Begründung").settings.log("final")
 ,
         newButton( "Weiter" )
