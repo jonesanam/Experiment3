@@ -429,11 +429,6 @@ audio = ""
         .print()
     ,
     getTextInput("Begründung").settings.log("final")
-    ,
-    newFunction( ()=>{
-    window.scrollTo(0,0);
-    document.querySelector(".PennController-TextInput.PennController-alter").focus();
-}).call()
 ,
         newButton( "Weiter" )
             .settings.css("font-family", "calibri").settings.css("font-size", "12px")
