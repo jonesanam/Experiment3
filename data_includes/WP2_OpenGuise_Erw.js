@@ -648,8 +648,11 @@ PennController("Meta1",
                .print()
                .wait(
             newFunction('dummy', ()=>true).test.is(true)
+            // before
+            .and( getDropDown("before").test.selected()
+                   .failure( newText('errorbefore', "<br>Bitte angeben, ob Sie an einem vergleichbaren Experiment teilgenommen haben.").color("red") .center().print() )
             // age
-            .and( getDropDown("age").test.selected()
+            ).and( getDropDown("age").test.selected()
                     .failure( newText('errorage', "<br>Bitte Alter angeben.").color("red") .center().print() )
             // sex
             ).and( getDropDown("sex").test.selected()
