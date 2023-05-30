@@ -224,6 +224,7 @@ audio = ""
     newAudio( audio )
             .center()    
             .once()
+            .log("aud",audio)
            
         ,
     newImage("message","messageExp3.png")
@@ -236,8 +237,8 @@ audio = ""
  
          ,
          getAudio( audio )
-                   .log("audio", audio)
                    .wait("first")
+                   .log("audio", audio)      
                    .remove()
          ,
          getImage("message").remove()
