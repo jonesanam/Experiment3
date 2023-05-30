@@ -224,6 +224,7 @@ audio = ""
     newAudio( audio )
             .center()
             .once()
+            .log()
         ,
     newImage("message","messageExp3.png")
             .size(430,215)
@@ -232,8 +233,10 @@ audio = ""
         .add(   130, 0, getImage("message"))
         .add( 150, 135, getAudio(audio))
     .print()
+    .log()
          ,
-         getAudio( audio ).wait("first").log().remove()
+         getAudio( audio ).wait("first").remove()
+         .log()
          ,
          getImage("message").remove()
          ,
