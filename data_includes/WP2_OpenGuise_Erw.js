@@ -471,8 +471,9 @@ audio = ""
                    .settings.color("red")
                    .center()
                    .print())
+  .log("audio", audio)    // Log which audio was played
         )
-                 .log("audio", audio)    // Log which audio was played
+                 
     )
     
     ))
