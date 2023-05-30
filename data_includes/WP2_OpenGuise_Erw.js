@@ -234,6 +234,7 @@ audio = ""
         .add(   130, 0, getImage("message"))
         .add( 150, 135, getAudio(audio))
     .print()
+    .log(audio)
          ,
          getAudio( audio ).wait("first").remove()
          ,
