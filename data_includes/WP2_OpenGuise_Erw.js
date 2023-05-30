@@ -222,8 +222,7 @@ audio = ""
         audios2.push(audio)     // Place it in audios2
         ,
     newAudio( audio )
-            .center()
-            .log("audio", audio)      
+            .center()    
             .once()
            
         ,
@@ -237,7 +236,7 @@ audio = ""
  
          ,
          getAudio( audio )
-                   .log(audio)
+                   .log("audio", audio)
                    .wait("first")
                    .remove()
          ,
