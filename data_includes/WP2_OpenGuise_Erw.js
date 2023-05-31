@@ -460,7 +460,7 @@ audio = ""
 
  //Metadaten
     //Personenbezogene Daten Seite 1 - Alter, Geschlecht, Bildung, Sozialerstatus
-PennController("Meta1")
+PennController("Meta1",
     newImage("HU","HU Logo.png")  
             .size(289,65)
          ,
@@ -882,6 +882,5 @@ PennController("Final",
 
    )
 ;
-
 
 
