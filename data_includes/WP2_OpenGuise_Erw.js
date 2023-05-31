@@ -222,10 +222,8 @@ audio = ""
         audios2.push(audio)     // Place it in audios2
         ,
     newAudio( audio )
-            .center()    
+            .center()
             .once()
-            .log("aud",audio)
-           
         ,
     newImage("message","messageExp3.png")
             .size(430,215)
@@ -234,12 +232,8 @@ audio = ""
         .add(   130, 0, getImage("message"))
         .add( 150, 135, getAudio(audio))
     .print()
- 
          ,
-         getAudio( audio )
-                   .wait("first")
-                   .log("audio", audio)      
-                   .remove()
+         getAudio( audio ).wait("first").remove()
          ,
          getImage("message").remove()
          ,
@@ -449,25 +443,7 @@ audio = ""
                .print()
                .wait(newFunction('dummy', ()=>true).test.is(true)
             // Skalen
-            .and(getScale("selbstbewusstsein").test.selected()
-              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
-            .and(getScale("sympathie").test.selected()
-              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
-            .and(getScale("erfolg").test.selected()
-              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
-            .and(getScale("entspanntheit").test.selected()
-              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
-            .and(getScale("intelligenz").test.selected()
-              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
-            .and(getScale("vertrautheit").test.selected()
-              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
-            .and(getScale("kompetenz").test.selected()
-              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
-            .and(getScale("humor").test.selected()
-              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
-            .and(getScale("ehrgeiz").test.selected()
-              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
-            .and(getScale("freundlichkeit").test.selected()
+            .and(getScale("selbstbewusstsein","sympathie","erfolg","entspanntheit","intelligenz","vertrautheit","kompetenz","humor","ehrgeiz","freundlichkeit").test.selected()
               .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
          //mandatoryTextfeld
                 ).and(
@@ -477,11 +453,9 @@ audio = ""
                    .settings.color("red")
                    .center()
                    .print())
-
         )
-                 
     )
-    
+    .log("audio", audio)    // Log which audio was played
     ))
 
  //Metadaten
@@ -908,5 +882,7 @@ PennController("Final",
 
    )
 ;
+
+
 
 
