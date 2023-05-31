@@ -639,7 +639,11 @@ PennController("Meta1",
                newCanvas("filler", 1, 20)
                .print()
                ,
-
+    newFunction( ()=>{
+    window.scrollTo(0,0);
+    document.querySelector(".PennController-DropDown.PennController-before").focus();
+}).call()
+,
     newButton("continue", "Weiter")
                .settings.css("font-family", "calibri").settings.css("font-size", "12px")
                //.settings.center()
