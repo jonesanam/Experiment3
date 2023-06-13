@@ -446,16 +446,31 @@ audio = ""
                .print()
                .wait(newFunction('dummy', ()=>true).test.is(true)
             // Skalen
-            .and(getScale("selbstbewusstsein","sympathie","erfolg","entspanntheit","intelligenz","vertrautheit","kompetenz","humor","ehrgeiz","freundlichkeit").test.selected()
-              .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+newFunction('dummy', ()=>true).test.is(true)
+  .and( getScale("selbstbewusstsein").test.selected()
+    .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+  ).and( getScale("sympathie").test.selected()
+    .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+  ).and( getScale("erfolg").test.selected()
+    .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+  ).and( getScale("entspanntheit").test.selected()
+    .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+  ).and( getScale("intelligenz").test.selected()
+    .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+  ).and( getScale("vertrautheit").test.selected()
+    .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+  ).and( getScale("kompetenz").test.selected()
+    .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+  ).and( getScale("humor").test.selected()
+    .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+  ).and( getScale("ehrgeiz").test.selected()
+    .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
+  ).and( getScale("freundlichkeit").test.selected()
+    .failure( newText('errorscales', "<br>Bitte auf jeder Skala einen Punkt auswählen.").color("red") .center().print() )
          //mandatoryTextfeld
-                ).and(
-             getTextInput("herkunft","alter","wohnort","situation").test.text(/^.+/) // testing if at least one digit was written in the input box
-                .failure(
-                   newText("textfelderror","<br>Bitte jede Frage zur Person im jeweiligen Textfeld beantworten.")
-                   .settings.color("red")
-                   .center()
-                   .print())
+ ).and( getTextInput("herkunft","alter","wohnort","situation").test.text(/^.+/) // testing if at least one digit was written in the input box
+    .failure( newText("textfelderror","<br>Bitte jede Frage zur Person im jeweiligen Textfeld beantworten.").color("red").center().print() )
+  )
         )
     )
     .log("audio", audio)    // Log which audio was played
