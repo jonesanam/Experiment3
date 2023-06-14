@@ -113,7 +113,7 @@ PennController("Code",
         .print()
     ,
     getTextInput("Texteingabe-Code")
-            .log("final")
+            .log("last")
     ,
     newButton("weiter","zur Anleitung")
         .center()
@@ -431,7 +431,7 @@ audio = ""
         .add(0,0,getTextInput("Begründung") .size(708,100) .lines(15))
         .print()
 ,              
-    getTextInput("Begründung").settings.log("final")
+    getTextInput("Begründung").settings.log("last")
     ,
     newFunction( ()=>{
     window.scrollTo(0,0);
@@ -746,7 +746,7 @@ PennController("Meta2",
         .print()
 ,
     getTextInput("SprachenMutter")
-        .log("final")
+        .log("last")
 ,
 newText("Leerzeile"," <br></p>")
     .center()
@@ -766,7 +766,7 @@ newText("Leerzeile"," <br></p>")
         .print()
 ,
     getTextInput("SprachenVater")
-        .log("final")
+        .log("last")
                ,
                newText("Leerzeile"," <br></p>")
                  .center()
@@ -786,7 +786,7 @@ newText("Leerzeile"," <br></p>")
         .print()
 ,
     getTextInput("SprachenSelbst")
-        .log("final")
+        .log("last")
     ,
  newText("Leerzeile"," <br></p>")
                  .center()
@@ -808,7 +808,7 @@ newText("Leerzeile"," <br></p>")
         .print()
 ,
     getTextInput("Dialekt")
-        .log("final")
+        .log("last")
 ,
 newText("Leerzeile"," <br></p>")
                  .center()
@@ -829,7 +829,7 @@ newText("Email","<b>Dürften wir Sie in Zukunft erneut kontaktieren?</b><br>Wenn
         .print()
 ,
     getTextInput("Email")
-        .log("final")
+        .log("last")
 ,
 newText("Leerzeile"," <br></p>")
                  .center()
