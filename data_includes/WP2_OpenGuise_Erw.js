@@ -328,7 +328,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>überhaupt nicht selbstbewusst</b>"))
         .settings.after(newText("<b>sehr selbstbewusst</b>"))
-        .settings.log("final")
+        .settings.log("last")
         .center()
         .print()
     ,
@@ -337,7 +337,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>überhaupt nicht sympathisch</b>"))
         .settings.after(newText("<b>sehr sympathisch</b>"))
-        .settings.log("final")
+        .settings.log("last")
         .center()
         .print()
     , 
@@ -346,7 +346,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>beruflich überhaupt nicht erfolgreich</b>"))
         .settings.after(newText("<b>beruflich sehr erfolgreich</b>"))
-        .settings.log("final")
+        .settings.log("last")
         .center()
         .print()
     ,
@@ -355,7 +355,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>überhaupt nicht entspannt</b>"))
         .settings.after(newText("<b>sehr entspannt</b>"))
-        .settings.log("final")
+        .settings.log("last")
         .center()
         .print()
     ,          
@@ -364,7 +364,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>überhaupt nicht intelligent</b>"))
         .settings.after(newText("<b>sehr intelligent</b>"))
-        .settings.log("final")
+        .settings.log("last")
         .center()
         .print()
     ,      
@@ -373,7 +373,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>überhaupt nicht vertraut</b>"))
         .settings.after(newText("<b>sehr vertraut</b>"))
-        .settings.log("final")
+        .settings.log("last")
         .center()
         .print()
     ,
@@ -382,7 +382,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>überhaupt nicht kompetent</b>"))
         .settings.after(newText("<b>sehr kompetent</b>"))
-        .settings.log("final")
+        .settings.log("last")
         .center()
         .print()
     ,            
@@ -391,7 +391,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>überhaupt nicht humorvoll</b>"))
         .settings.after(newText("<b>sehr humorvoll</b>"))
-        .settings.log("final")
+        .settings.log("last")
         .center()
         .print()
     ,            
@@ -400,7 +400,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>überhaupt nicht ehrgeizig</b>"))
         .settings.after(newText("<b>sehr ehrgeizig</b>"))
-        .settings.log("final")
+        .settings.log("last")
         .center()
         .print() 
         ,    
@@ -409,7 +409,7 @@ audio = ""
         .settings.labelsPosition("bottom").color("white")
         .settings.before(newText("<b>überhaupt nicht freundlich</b>"))
         .settings.after(newText("<b>sehr freundlich</b>"))
-        .settings.log("final")
+        .settings.log("last")
         .center()
         .print()
         ,
