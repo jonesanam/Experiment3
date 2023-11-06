@@ -814,7 +814,7 @@ newText("Leerzeile"," <br></p>")
                  .center()
                 .print()
                  ,
-newText("Email","<b>Dürften wir Sie in Zukunft erneut kontaktieren?</b><br>Wenn ja, bitte Emailadresse angeben.<br>Die Angabe der Kontaktdaten ist freiwillig. Um Anonymität zu gewährleisten, wird diese Angabe getrennt vom ausgefüllten Fragebogen archiviert.")
+newText("Email","<b>Dürften wir Sie in Zukunft erneut kontaktieren und möchten Sie an einem Gewinnspiel teilnehmen?</b><br>Wenn ja, bitte Emailadresse angeben.<br>Die Angabe der Kontaktdaten ist freiwillig. Um Anonymität zu gewährleisten, wird diese Angabe getrennt vom ausgefüllten Fragebogen archiviert.")
 //        .center()
         .print()
 ,
