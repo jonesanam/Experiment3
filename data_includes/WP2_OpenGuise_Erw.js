@@ -834,7 +834,6 @@ newText("Email","<b>Dürften wir Sie in Zukunft erneut kontaktieren?</b><br>Wenn
 newText("Leerzeile"," <br></p>")
                  .center()
                 .print()
-                 ,
 ,
      //Gewinnspiel
      newText("gewinnspiel", "Möchten Sie an einem Gewinnspiel teilnehmen?")
