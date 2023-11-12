@@ -851,6 +851,10 @@ newText("Leerzeile"," <br></p>")
      //.settings.center()
      .print()
 ,
+newText("Leerzeile"," <br></p>")
+    .center()
+    .print()
+,               
     newFunction( ()=>{
     window.scrollTo(0,0);
     document.querySelector(".PennController-TextInput.PennController-SprachenMutter").focus();
