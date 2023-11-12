@@ -814,7 +814,7 @@ newText("Leerzeile"," <br></p>")
                  .center()
                 .print()
                  ,
-newText("Email","<b>Dürften wir Sie in Zukunft erneut kontaktieren und möchten Sie an einem Gewinnspiel teilnehmen?</b><br>Wenn ja, geben Sie bitte Ihre E-Mail-Adresse an.<br>Die Angabe der Kontaktdaten ist freiwillig. Um Anonymität zu gewährleisten, wird diese Angabe getrennt vom ausgefüllten Fragebogen archiviert.")
+newText("Email","<b>Dürften wir Sie in Zukunft erneut kontaktieren?</b><br>Wenn ja, geben Sie bitte Ihre E-Mail-Adresse an.<br>Die Angabe der Kontaktdaten ist freiwillig. Um Anonymität zu gewährleisten, wird diese Angabe getrennt vom ausgefüllten Fragebogen archiviert.")
 //        .center()
         .print()
 ,
@@ -835,6 +835,22 @@ newText("Leerzeile"," <br></p>")
                  .center()
                 .print()
                  ,
+,
+     //Gewinnspiel
+     newText("gewinnspiel", "Möchten Sie an einem Gewinnspiel teilnehmen?")
+     .settings.css("font-size", "18px")
+     .settings.bold()
+,
+     newDropDown("gewinnspiel", "Bitte eine Option ausw&auml;hlen")
+     .settings.add("Ja", "Nein")
+     .log()
+,
+     newCanvas("gewinnspielcanvas", 1000, 40)
+     .settings.add(0, 0, getText("gewinnspiel"))
+     .settings.add(450,3, getDropDown("gewinnspiel"))
+     //.settings.center()
+     .print()
+,
     newFunction( ()=>{
     window.scrollTo(0,0);
     document.querySelector(".PennController-TextInput.PennController-SprachenMutter").focus();
