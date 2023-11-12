@@ -834,22 +834,24 @@ newText("Email","<b>Dürften wir Sie in Zukunft erneut kontaktieren?</b><br>Wenn
 newText("Leerzeile"," <br></p>")
                  .center()
                 .print()
+                 ,
+newText("Gewinnspiel","<b>Möchten Sie an einem Gewinnspiel teilnehmen?")
+//        .center()
+        .print()
 ,
-     //Gewinnspiel
-     newText("gewinnspiel", "Möchten Sie an einem Gewinnspiel teilnehmen?")
-     .settings.css("font-size", "18px")
-     .settings.bold()
+    newCanvas("Gewinnspiel", 1, 10)
+ //       .center()
+        .print()
 ,
-     newDropDown("gewinnspiel", "Bitte eine Option ausw&auml;hlen")
-     .settings.add("Ja", "Nein")
-     .log()
+
+    newTextInput("Gewinnspiel")
+ //       .center()
+        .size(600,80)
+        .print()
 ,
-     newCanvas("gewinnspielcanvas", 1000, 40)
-     .settings.add(0, 0, getText("gewinnspiel"))
-     .settings.add(450,3, getDropDown("gewinnspiel"))
-     //.settings.center()
-     .print()
-,
+    getTextInput("Gewinnspiel")
+        .log("last")
+,               
 newText("Leerzeile"," <br></p>")
     .center()
     .print()
