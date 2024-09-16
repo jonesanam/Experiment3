@@ -494,7 +494,38 @@ PennController("Meta1",
             .center()
             .print()
         ,
+newText("erkannt?","<b>Hatten Sie das Gefühl, die Person, die Sie eben gehört haben, persönlich zu kennen?</b><br><small>(Falls ja: Was glauben Sie, wer es ist?)</small><br><br>")
+               .settings.css("font-size", "18px")
+               ,
+               newTextInput("erkanntinput")
+               .settings.size(150,40)
+               .log()
+               .settings.hidden()
+               ,
+               newText("erkannt_input", "")
+               .settings.after(getTextInput("erkanntinput"))
+               ,
+               newDropDown("erkannt",  "<br>" +"Bitte eine Option ausw&auml;hlen")
+               .settings.add("Ja", "Nein")
+               .log()
+               .settings.after(getText("erkannt_input"))
+               .settings.callback(
+                   getDropDown("erkannt")
+                   .test.selected("Ja")
+                   .success(getTextInput("erkanntinput").settings.visible(
 
+                   )) )
+               ,
+               newCanvas("erkannt", 1000, 40)
+               .settings.add(0, 0, getText("erkannt?"))
+               .settings.add(500,25, getDropDown("erkannt"))
+               //.settings.center()
+               .print()
+               ,
+               newCanvas("filler", 1, 20)
+               .print()
+               )
+,
     newText("Meta-1", "<b>Personenbezogene Daten</b> <p>Wir brauchen einige persönliche Angaben von Ihnen. Diese werden anonymisiert gespeichert und eine spätere Zuordnung zu Ihnen wird nicht möglich sein. Bitte nehmen Sie sich beim Ausfüllen der Felder Zeit.<p>")
  //       .settings.css("text-align","justify")
         .center()
